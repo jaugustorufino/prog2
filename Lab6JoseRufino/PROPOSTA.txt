@@ -1,0 +1,61 @@
+	Em primeiro lugar, deve ser alterada a classe Peca, para que esta, passe a ser um tipo Peca e deve ser estendida por outras classes, tais como: PecaNormal, PecaEmoji, PecaPrimo, PecaFibonacci, PecaPotencia, etc. Dessa forma, a relação entre o tipo Peca e seus subtipos será Herança.
+	Com isso, devem ser implementados os métodos que vão ser utilizados da mesma forma nos subtipos de Peca, que são eles: gira(), getNumEsquerdo(), getNumDireito(), encaixa(int valor) e toString(). Além disso, deve ser criado o método abstrato criaPecas(), que retorna uma lista com as peças criadas e que será implementado nas classes do tipo Peca. Dessa forma, cada implementação será feita de maneira diferente, visto que as peças a serem criadas, dependem de qual tipo de Peca está sendo utilizado, por exemplo, se forem peças de PecaPotencia, seriam apenas as peças com os números: 1, 2, 4, 8, 16, 32. Assim, a entidade recebida pelo de Jogo será um desses tipos de peça, como Jogo(new PecaEmoji()).
+	Portanto, será criada a classe abstrata Peca, que tem uma herança, que vai para cada tipo de Peca "Filha", dessa forma, a classe Peca não pode ser instanciada e as outras classes "filhas" devem implementar o método abstrato criaPecas(). Ademais, os atributos numEsquerdo e numDireito da classe "Pai" Peca, são do tipo protected e há outro atributo protected que é a lista de peças possíveis para começar o jogo, o listaPecas, que é gerado, à medida que é feito um criaPecas() daquele tipo de Peca.
+	
+- Foi feito uma modelação para que pudesse ser entendida melhor a ideia. Modeligado:
+
+Peca <Abstract>
+---
+# numEsquerdo: int
+# numDireito: int
+# listaPecas: List<Peca>
+---
++ gira(): void
++ getValorEsquerdo(): int
++ getValorDireito(): int
++ encaixa(valor: int): boolean
++ toString(): String
+// Abstract method
++ criaPecas(): List<Peca>
+---
+
+PecaNormal
+extends Peca <Abstract>
+---
+---
+// @Override
++ criaPecas(): List<Peca>
+---
+
+PecaEmoji
+extends Peca <Abstract>
+---
+---
+// @Override
++ criaPecas(): List<Peca>
+---
+
+PecaPrimo
+extends Peca <Abstract>
+---
+---
+// @Override
++ criaPecas(): List<Peca>
+---
+
+
+PecaFibonacci
+extends Peca <Abstract>
+---
+---
+// @Override
++ criaPecas(): List<Peca>
+---
+
+PecaPotencia
+extends Peca <Abstract>
+---
+---
+// @Override
++ criaPecas(): List<Peca>
+---
